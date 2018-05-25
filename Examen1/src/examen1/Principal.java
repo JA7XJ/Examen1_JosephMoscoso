@@ -627,7 +627,7 @@ public class Principal extends javax.swing.JFrame {
                                 }
                                 
                             }
-                        }
+                        }//faltaron algunos comandos
                         if (t[j].equals("Method")) {
                             us.get(ind).getClases().get(c).getM().add(new metodos("public void addition"));
                             c3++;
