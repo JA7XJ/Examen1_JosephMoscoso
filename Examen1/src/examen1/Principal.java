@@ -512,7 +512,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String commands;
         String []t;
-        int c=0;
+        int c=0, c2=0, c3=0, xx=0;
         int ind=Integer.parseInt(indice.getText());
         try {
             commands=comandoss.getText();
@@ -555,7 +555,16 @@ public class Principal extends javax.swing.JFrame {
                                     for (int l = k; l < t.length; l++) {
                                         if (t[l].equals("Perro")) {
                                             int nuevo=Integer.parseInt(us.get(ind).getClases().get(c).getNombre());
-                                            us.get(ind).getClases().get(c).getA().get(c).setAge(nuevo);
+                                            us.get(ind).getClases().get(c).getA().get(c2).setAge(nuevo);
+                                        }
+                                        if (t[l].equals("Method")) {
+                                            for (int m = l; m < t.length; m++) {
+                                                if (t[m].equals("Addition")) {
+                                                    int nuevo=Integer.parseInt(t[m+1]);
+                                                    us.get(ind).getClases().get(c).getM().get(c3).x.remove(xx);
+                                                    us.get(ind).getClases().get(c).getM().get(c3).x.add(nuevo);
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -570,6 +579,7 @@ public class Principal extends javax.swing.JFrame {
                             for (int k = j; k < t.length; k++) {
                                 if (t[k].equals("Perro")) {
                                     us.get(ind).getClases().remove(c);
+                                    c--;
                                 }
                             }
                         }
@@ -578,8 +588,15 @@ public class Principal extends javax.swing.JFrame {
                                 if (t[k].equals("from")) {
                                     for (int l = k; l < t.length; l++) {
                                         if (t[l].equals("Perro")) {
-                                            us.get(ind).getClases().get(c).getA().remove(c);
-                                            c--;
+                                            us.get(ind).getClases().get(c).getA().remove(c2);
+                                            c2--;
+                                        }
+                                        if (t[l].equals("Method")) {
+                                            for (int m = l; m < t.length; m++) {
+                                                if (t[m].equals("Addition")) {
+                                                    us.get(ind).getClases().get(c).getM().get(c3).x.remove(xx);
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -589,17 +606,33 @@ public class Principal extends javax.swing.JFrame {
                 }
                 if (t[i].equals("Add")) {
                     for (int j = i; j < t.length; j++) {
-                        if (t[i].equals("Atribute")) {
+                        if (t[j].equals("Atribute")) {
                             for (int k = j; k < t.length; k++) {
                                 if (t[k].equals("to")) {
                                     for (int l = k; l < t.length; l++) {
                                         if (t[l].equals("Perro")) {
                                             us.get(ind).getClases().get(c).getA().add(new atributos(t[l+1]));
+                                            c2++;
+                                        }
+                                        if (t[l].equals("Method")) {
+                                            for (int m = l; m < t.length; m++) {
+                                                if (t[m].equals("Addition")) {
+                                                    int nuevo=Integer.parseInt(t[m+1]);
+                                                    us.get(ind).getClases().get(c).getM().get(c3).getX().add(nuevo);
+                                                    xx++;
+                                                }
+                                            }
                                         }
                                     }
                                 }
+                                
                             }
                         }
+                        if (t[j].equals("Method")) {
+                            us.get(ind).getClases().get(c).getM().add(new metodos("public void addition"));
+                            c3++;
+                        }
+                        
                     }
                 }
             }
