@@ -73,6 +73,10 @@ public class Principal extends javax.swing.JFrame {
         comandoss = new javax.swing.JTextArea();
         cingresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        visualizar = new javax.swing.JTextPane();
+        jLabel17 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -305,15 +309,40 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Comandos", jPanel2);
 
+        jScrollPane7.setViewportView(visualizar);
+
+        jLabel17.setFont(new java.awt.Font("Ubuntu", 3, 36)); // NOI18N
+        jLabel17.setText("Visualizacion de elementos");
+
+        jButton4.setText("Iniciar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel17)
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jButton4)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visualizar", jPanel3);
@@ -550,6 +579,7 @@ public class Principal extends javax.swing.JFrame {
                                     for (int l = k; l < t.length; l++) {
                                         if (t[l].equals("Perro")) {
                                             us.get(ind).getClases().get(c).getA().remove(c);
+                                            c--;
                                         }
                                     }
                                 }
@@ -579,6 +609,12 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_cingresarMouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        int ind=Integer.parseInt(indice.getText());
+        visualizar.setText(us.get(ind).toString());
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -624,6 +660,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -632,6 +669,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -649,6 +687,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_logeado;
     private javax.swing.JDialog jd_registrar;
@@ -664,6 +703,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextPane sname;
     private javax.swing.JTextPane sscorr;
     private javax.swing.JTextPane suser;
+    private javax.swing.JTextPane visualizar;
     // End of variables declaration//GEN-END:variables
 ArrayList<usuario> us=new ArrayList();
 }
