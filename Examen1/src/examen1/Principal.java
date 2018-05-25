@@ -493,8 +493,8 @@ public class Principal extends javax.swing.JFrame {
                     for (int j = i; j < t.length; j++) {
                         if (t[j].equals("class")) {
                             for (int k = j; k < t.length; k++) {
-                                if (t[k].equals("cat")) {
-                                    String name="cat";
+                                if (t[k].equals("Cat")) {
+                                    String name="Cat";
                                    // int ind=Integer.parseInt(indice.getText());
                                     us.get(ind).getClases().add(new clases(name));
                                     c++;
@@ -507,12 +507,12 @@ public class Principal extends javax.swing.JFrame {
                     for (int j = i; j < t.length; j++) {
                         if (t[j].equals("class")) {
                             for (int k = j; k < t.length; k++) {
-                                if (t[k].equals("cat")) {
+                                if (t[k].equals("Cat")) {
                                     for (int l = k; l < t.length; l++) {
                                         if (t[l].equals("to")) {
                                             for (int m = l; m < t.length; m++) {
-                                                if (t[m].equals("perro")) {
-                                                    us.get(ind).getClases().get(c).setNombre("perro");
+                                                if (t[m].equals("Perro")) {
+                                                    us.get(ind).getClases().get(c).setNombre("Perro");
                                                 }
                                             }
                                         }
@@ -524,7 +524,7 @@ public class Principal extends javax.swing.JFrame {
                             for (int k = j; k < t.length; k++) {
                                 if (t[k].equals("from")) {
                                     for (int l = k; l < t.length; l++) {
-                                        if (t[l].equals("perro")) {
+                                        if (t[l].equals("Perro")) {
                                             int nuevo=Integer.parseInt(us.get(ind).getClases().get(c).getNombre());
                                             us.get(ind).getClases().get(c).getA().get(c).setAge(nuevo);
                                         }
@@ -539,7 +539,7 @@ public class Principal extends javax.swing.JFrame {
                     for (int j = i; j < t.length; j++) {
                         if (t[j].equals("class")) {
                             for (int k = j; k < t.length; k++) {
-                                if (t[k].equals("perro")) {
+                                if (t[k].equals("Perro")) {
                                     us.get(ind).getClases().remove(c);
                                 }
                             }
@@ -548,7 +548,7 @@ public class Principal extends javax.swing.JFrame {
                             for (int k = j; k < t.length; k++) {
                                 if (t[k].equals("from")) {
                                     for (int l = k; l < t.length; l++) {
-                                        if (t[l].equals("perro")) {
+                                        if (t[l].equals("Perro")) {
                                             us.get(ind).getClases().get(c).getA().remove(c);
                                         }
                                     }
@@ -563,7 +563,7 @@ public class Principal extends javax.swing.JFrame {
                             for (int k = j; k < t.length; k++) {
                                 if (t[k].equals("to")) {
                                     for (int l = k; l < t.length; l++) {
-                                        if (t[l].equals("perro")) {
+                                        if (t[l].equals("Perro")) {
                                             us.get(ind).getClases().get(c).getA().add(new atributos(t[l+1]));
                                         }
                                     }
