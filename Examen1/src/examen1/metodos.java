@@ -15,8 +15,15 @@ public class metodos {
     ArrayList x=new ArrayList();
     private String cuerpo;
     private String name;
-
+    private String tostring;
+    
     public metodos() {
+    }
+
+    public metodos(String cuerpo, String name, String tostring) {
+        this.cuerpo = cuerpo;
+        this.name = name;
+        this.tostring = tostring;
     }
     
     public metodos(String cuerpo) {
@@ -50,6 +57,14 @@ public class metodos {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTostring() {
+        return tostring;
+    }
+
+    public void setTostring(String tostring) {
+        this.tostring = tostring;
     }
     
 }
