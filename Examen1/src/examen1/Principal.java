@@ -316,7 +316,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 560, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Ejecutar", jPanel3);
+        jTabbedPane1.addTab("Visualizar", jPanel3);
 
         jButton3.setText("Cerrar Sesion");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -520,6 +520,18 @@ public class Principal extends javax.swing.JFrame {
                                 }
                             }
                         }
+                        if (t[j].equals("Atribute")) {
+                            for (int k = j; k < t.length; k++) {
+                                if (t[k].equals("from")) {
+                                    for (int l = k; l < t.length; l++) {
+                                        if (t[l].equals("perro")) {
+                                            int nuevo=Integer.parseInt(us.get(ind).getClases().get(c).getNombre());
+                                            us.get(ind).getClases().get(c).getA().get(c).setAge(nuevo);
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         
                     }
                 }
@@ -532,11 +544,32 @@ public class Principal extends javax.swing.JFrame {
                                 }
                             }
                         }
+                        if (t[j].equals("Atribute")) {
+                            for (int k = j; k < t.length; k++) {
+                                if (t[k].equals("from")) {
+                                    for (int l = k; l < t.length; l++) {
+                                        if (t[l].equals("perro")) {
+                                            us.get(ind).getClases().get(c).getA().remove(c);
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 if (t[i].equals("Add")) {
-                    for (int j = 0; j < t.length; j++) {
-                        
+                    for (int j = i; j < t.length; j++) {
+                        if (t[i].equals("Atribute")) {
+                            for (int k = j; k < t.length; k++) {
+                                if (t[k].equals("to")) {
+                                    for (int l = k; l < t.length; l++) {
+                                        if (t[l].equals("perro")) {
+                                            us.get(ind).getClases().get(c).getA().add(new atributos(t[l+1]));
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
