@@ -5,6 +5,9 @@
  */
 package examen1;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alexycruz1
@@ -39,7 +42,9 @@ public class Principal extends javax.swing.JFrame {
         rcorreo = new javax.swing.JTextField();
         ruser = new javax.swing.JTextField();
         rcontra = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        registrarr = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        redad = new javax.swing.JTextField();
         jd_logeado = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -64,7 +69,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel7.setText("Contraseña");
 
-        jButton4.setText("Registrar");
+        registrarr.setText("Registrar");
+        registrarr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registrarrMouseClicked(evt);
+            }
+        });
+
+        jLabel8.setText("Edad");
 
         javax.swing.GroupLayout jd_registrarLayout = new javax.swing.GroupLayout(jd_registrar.getContentPane());
         jd_registrar.getContentPane().setLayout(jd_registrarLayout);
@@ -89,13 +101,17 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(jd_registrarLayout.createSequentialGroup()
                                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4)
-                                    .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ruser)
-                                        .addComponent(rcontra)))))))
+                                    .addComponent(ruser)
+                                    .addComponent(rcontra)
+                                    .addGroup(jd_registrarLayout.createSequentialGroup()
+                                        .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(registrarr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(redad))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jd_registrarLayout.setVerticalGroup(
@@ -119,9 +135,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(rcontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jButton4)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(redad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(registrarr)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -277,6 +297,30 @@ public class Principal extends javax.swing.JFrame {
         jd_logeado.dispose();
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void registrarrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarrMouseClicked
+        String name, correo, user, pass;
+        int edad;
+        
+        try {
+            name=rname.getText();
+            correo=rcorreo.getText();
+            user=ruser.getText();
+            pass=rcontra.getText();
+            edad=Integer.parseInt(redad.getText());
+            usuario u=new usuario(name, edad, correo, user, pass);
+            us.add(u);
+            JOptionPane.showMessageDialog(this, "Usuario registrado con exito");
+            rname.setText("");
+            rcorreo.setText("");
+            ruser.setText("");
+            rcontra.setText("");
+            redad.setText("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, usuario ingresado correctamente");
+        }
+        jd_registrar.dispose();
+    }//GEN-LAST:event_registrarrMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -316,7 +360,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -324,6 +367,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -334,7 +378,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JTextField rcontra;
     private javax.swing.JTextField rcorreo;
+    private javax.swing.JTextField redad;
+    private javax.swing.JButton registrarr;
     private javax.swing.JTextField rname;
     private javax.swing.JTextField ruser;
     // End of variables declaration//GEN-END:variables
+ArrayList<usuario> us=new ArrayList();
 }
